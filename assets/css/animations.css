@@ -1,0 +1,161 @@
+#animationsss {
+    width: 100%;
+    height: auto;
+    /* overflow: hidden; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    /* border: 2px solid red; */
+    animation: fadeInLeft 1s ease forwards;
+    animation-delay: 0.5s;
+    opacity: 0; 
+}
+#image-container {
+    flex-shrink: 0;
+    width: 150px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: flex-end;
+    gap: 25px;
+    overflow: hidden;
+    /* border: 2px solid blue; */
+}
+.image {
+    flex-shrink: 0;
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: move 20s linear infinite alternate;
+    user-select: none;
+}
+.picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+@keyframes move {
+    0% {
+        transform: translatey(0);
+    }
+    100% {
+        transform: translatey(500%);
+    }
+}
+
+#image-container:nth-child(2) .image {
+    animation-direction: alternate-reverse;
+}
+#image-container:nth-child(3) {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+}       
+
+#image-container:hover .image {
+    animation-play-state: paused;
+}
+/* Media Queries */
+
+/* for 4k and more */
+@media (min-width: 1920px) {
+    #animationsss {
+        margin-top: 90px;
+        margin-left:5px;
+    }
+    #image-container{
+        transform: rotate(0deg);
+    }
+}
+
+/* For 1400 or more */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@media (min-width: 1280px) and (max-width: 1919px) {
+    #animationsss {
+        width:40%;
+        margin-top: 90px;
+        margin-left:5px;
+    }
+    .image{
+        /* animation: move 15s linear infinite alternate; */
+    }
+    #image-container{
+        transform: rotate(0deg);
+    }
+    @keyframes move {
+    0% {
+        transform: translatey(0);
+    }
+    100% {
+        transform: translatey(500%);
+    }
+}
+}
+/* Large devices (small laptops, 1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    #animationsss {
+        width:20%;
+        margin-top: 90px;
+        margin-left:50px;
+        margin-right: 50px;
+    }
+    #image-container{
+        transform: rotate(0deg);
+    }
+}
+
+/* Medium devices (tablets, 768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #animationsss {
+        width: 100%;
+        margin-top: 90px;
+        margin-left:5px;
+    }
+    #image-container{
+        transform: rotate(0deg);
+    }
+    @keyframes move {
+    0% {
+        transform: translatey(0);
+    }
+    100% {
+        transform: translatey(500%);
+    }
+}
+}
+
+/* Small devices (phones in landscape, 480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+    #animationsss {
+        width: 100%;
+        margin-top: 90px;
+        margin-left:5px;
+    }
+    #image-container{
+        transform: rotate(0deg);
+    }
+}
+
+/* For Iphone12 Pro */
+@media (max-width: 479px) {
+    #animationsss {
+        margin-top: 90px;
+        margin-left:20px;
+    }
+    #image-container{
+        transform: rotate(0deg);
+    }
+
+}
